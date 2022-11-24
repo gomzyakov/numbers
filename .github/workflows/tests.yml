@@ -1,0 +1,86 @@
+name: test
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  phpunit:
+    runs-on: ${{ matrix.operating-system }}
+
+    strategy:
+      matrix:
+        operating-system: ['ubuntu-latest']
+        php-versions: ['8.1']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}   # checkout the correct branch name
+          fetch-depth: 0                # fetch the whole repo history
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, pdo, sqlite, pdo_sqlite
+          ini-values: max_execution_time=180
+
+      - name: Check PHP version
+        run: php -v
+
+      - name: Install Composer dependencies
+        run: composer update --no-interaction --prefer-dist
+
+      - name: Run tests via PHPUnit
+        env:
+          XDEBUG_MODE: coverage
+        run: |
+          vendor/bin/phpunit --coverage-clover=coverage.xml
+          cat ./coverage.xml
+
+      - name: Show coverage.xml
+        run: cat ./coverage.xml
+
+      - name: Upload coverage.xml to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+          fail_ci_if_error: true
+          flags: unittests
+          name: codecov-umbrella
+          verbose: true
+          env_vars: PHP
+
+#  phpstan:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v2
+#
+#      - name: Install Composer dependencies
+#        run: composer update --no-interaction --prefer-dist
+#
+#      - name: Run tests via PHPStan
+#        run: composer phpstan
+
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Composer dependencies
+        run: composer update --no-interaction --prefer-dist
+
+      - name: Check code style via Laravel Pint
+        run: composer cs-check
