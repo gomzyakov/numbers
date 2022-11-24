@@ -64,17 +64,17 @@ jobs:
           verbose: true
           env_vars: PHP
 
-  phpstan:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install Composer dependencies
-        run: composer update --no-interaction --prefer-dist
-
-      - name: Run tests via PHPStan
-        run: composer phpstan
+#  phpstan:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v2
+#
+#      - name: Install Composer dependencies
+#        run: composer update --no-interaction --prefer-dist
+#
+#      - name: Run tests via PHPStan
+#        run: composer phpstan
 
   php-cs-fixer:
     runs-on: ubuntu-latest
