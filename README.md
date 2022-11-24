@@ -18,6 +18,7 @@ Everything is very simple. For example, you can create and verify a TIN like thi
 
 ```php
 use Gomzyakov\Numbers\Numbers;
+use Gomzyakov\Numbers\INN;
 
 # TIN number
 $inn_number = '2245134075';
@@ -25,8 +26,8 @@ $inn_number = '2245134075';
 # Create a parser
 $inn = Numbers::createINN($inn_number);
 # Or so
-# $inn = INNNumber::create($inn_number);
-# $inn = new INNNumber($number);
+# $inn = INN::create($inn_number);
+# $inn = new INN($number);
 
 # Checking the correctness of the TIN
 if ($inn->isValid()) {
