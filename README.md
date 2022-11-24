@@ -4,14 +4,6 @@
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/gomzyakov/numbers/blob/development/LICENSE)
 [![codecov](https://codecov.io/gh/gomzyakov/numbers/branch/main/graph/badge.svg?token=4CYTVMVUYV)](https://codecov.io/gh/gomzyakov/numbers)
 
-A helper class to get the current GIT version of the project.
-
-
-Можешь подсказать библиотеку PHPшную, которая умеет валидировать
-ИНН
-, ОГРН
-и СНИЛС?
-
 ## Installation
 
 Just require it in your project via [Composer](https://getcomposer.org):
@@ -37,7 +29,7 @@ $inn = Numbers::createINN($inn_number);
 # $inn = new INNNumber($number);
 
 # Checking the correctness of the TIN
-if ($inn->isValidNumber()) {
+if ($inn->isValid()) {
     echo "INN is valid!";
 }
 ```
