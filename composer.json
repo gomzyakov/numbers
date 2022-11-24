@@ -1,0 +1,48 @@
+{
+    "name": "gomzyakov/numbers",
+    "description": "numbers",
+    "type": "package",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "inn"
+    ],
+    "homepage": "https://github.com/gomzyakov/numbers",
+    "authors": [
+        {
+            "name": "Alexander Gomzyakov",
+            "email": "alexander.gomzyakov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.8",
+        "mockery/mockery": "^1.5",
+        "laravel/pint": "^1.2",
+        "gomzyakov/php-code-style": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gomzyakov\\Numbers\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "./tests/"
+        }
+    },
+    "scripts": {
+        "cs-check": "@php ./vendor/bin/pint --test --config vendor/gomzyakov/php-code-style/pint.json",
+        "cs-fix": "@php ./vendor/bin/pint --config vendor/gomzyakov/php-code-style/pint.json",
+        "phpstan": "@php ./vendor/bin/phpstan analyze -c ./phpstan.neon.dist --no-progress --ansi",
+        "phpunit": "@php ./vendor/bin/phpunit ./tests --no-coverage --color=always",
+        "test": [
+            "@cs-check",
+            "@phpstan",
+            "@phpunit"
+        ]
+    }
+}
