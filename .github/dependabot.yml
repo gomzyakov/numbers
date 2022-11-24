@@ -22,10 +22,9 @@ updates:
     # Look for a `Dockerfile` in the `root` directory
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     assignees:
       - "gomzyakov"
-    versioning-strategy: increase
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
@@ -34,4 +33,3 @@ updates:
       interval: "weekly"
     assignees:
       - "gomzyakov"
-    versioning-strategy: increase
