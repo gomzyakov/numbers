@@ -37,9 +37,6 @@ jobs:
       - name: Check PHP version
         run: php -v
 
-      - name: Check GIT version
-        run: git describe --tags --abbrev=0
-
       - name: Install Composer dependencies
         run: composer update --no-interaction --prefer-dist
 
