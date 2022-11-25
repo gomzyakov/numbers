@@ -60,6 +60,9 @@ jobs:
           name: codecov-umbrella
           verbose: true
           env_vars: PHP
+      
+      - name: semantic-pull-request
+        uses: amannn/action-semantic-pull-request@v5.0.2
 
 #  phpstan:
 #    runs-on: ubuntu-latest
