@@ -8,6 +8,7 @@ permissions:
   contents: read
 
 jobs:
+  # Allowed PR types: https://github.com/commitizen/conventional-commit-types/blob/master/index.json
   semantic-pull-request:
     runs-on: ubuntu-latest
     steps:
