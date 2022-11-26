@@ -11,6 +11,9 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "build"
+      include: "scope"
     assignees:
       - "gomzyakov"
     labels:
@@ -23,6 +26,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build"
+      include: "scope"
     assignees:
       - "gomzyakov"
 
@@ -31,5 +37,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build"
+      include: "scope"
     assignees:
       - "gomzyakov"
