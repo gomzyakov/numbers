@@ -1,11 +1,25 @@
 {
     "name": "gomzyakov/numbers",
-    "description": "numbers",
+    "description": "Check the validity of a TIN, INN, BIK and other numbers",
     "type": "package",
     "license": "MIT",
     "keywords": [
         "php",
-        "inn"
+        "verify",
+        "validation",
+        "verification",
+        "inn",
+        "tin",
+        "pin",
+        "ean",
+        "snils",
+        "ssn",
+        "ein",
+        "kpp",
+        "bik",
+        "ogrn",
+        "ogrnip",
+        "itin"
     ],
     "homepage": "https://github.com/gomzyakov/numbers",
     "authors": [
