@@ -6,6 +6,8 @@
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/gomzyakov/numbers/blob/development/LICENSE)
 [![codecov](https://codecov.io/gh/gomzyakov/numbers/branch/main/graph/badge.svg?token=4CYTVMVUYV)](https://codecov.io/gh/gomzyakov/numbers)
 
+A library to validate TIN, INN, BIK and other numbers.
+
 ## Installation
 
 Just require it in your project via [Composer](https://getcomposer.org):
