@@ -72,15 +72,3 @@ jobs:
 #
 #      - name: Run tests via PHPStan
 #        run: composer phpstan
-
-  php-cs-fixer:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install Composer dependencies
-        run: composer update --no-interaction --prefer-dist
-
-      - name: Check code style via Laravel Pint
-        run: composer cs-check
