@@ -1,4 +1,4 @@
-name: php-cs-fixer
+name: lint
 
 on:
   push:
