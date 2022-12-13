@@ -1,4 +1,4 @@
-name: semantic-pull-request
+name: lint
 
 on:
   pull_request:
